@@ -2,6 +2,7 @@ package calculator.operators;
 
 import calculator.evaluator.Operand;
 import java.util.HashMap;
+import java.util.Map;
 
 public abstract class Operator {
     // The Operator class should contain an instance of a HashMap
@@ -15,7 +16,7 @@ public abstract class Operator {
     // operators.put( "+", new AdditionOperator() );
     // operators.put( "-", new SubtractionOperator() );
 
-    private static HashMap<String, Operator> operators = new HashMap<>();
+    private static Map<String, Operator> operators = new HashMap<>();
 
     static
     {
