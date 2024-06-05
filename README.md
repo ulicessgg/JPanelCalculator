@@ -2,11 +2,11 @@
 
 ## Student Information
 
-### Student Name  : Name here
+### Student Name  : Ulices Gonzalez
 
-### Student ID    : ID here
+### Student ID    : 923328897
 
-### Student Email : Email here
+### Student Email : sgonzalez30@sfsu.edu
 
 ## Requirements
 
