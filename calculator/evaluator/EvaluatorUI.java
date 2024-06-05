@@ -65,7 +65,8 @@ public class EvaluatorUI extends JFrame implements ActionListener {
       * @param actionEventObject Event object generated when a
       *                          button is pressed.
       */
-     public void actionPerformed(ActionEvent actionEventObject) {
+     public void actionPerformed(ActionEvent actionEventObject)
+     {
 
 
      }
