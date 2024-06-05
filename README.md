@@ -10,14 +10,14 @@
 
 ## Requirements
 
-- Implement Operand Class
-- Implement Operator Abtsraction
-- Implement Operator Sub classes
-    - Implement AddOperator class
-    - Implement Subractperator class
-    - Implement DivideOperator class
-    - Implement MultiplyOperator class
-    - Implement PowerOperator class
+- Implement Operand Class `done`
+- Implement Operator Abtsraction `done`
+- Implement Operator Sub classes `done`
+    - Implement AddOperator class `done`
+    - Implement Subractperator class `done`
+    - Implement DivideOperator class `done`
+    - Implement MultiplyOperator class `done`
+    - Implement PowerOperator class `done`
 - Implement the Evaluator Class
 - Implement the EvluatorUI Class
 - Write Project One documentation

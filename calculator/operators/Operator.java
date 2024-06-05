@@ -15,8 +15,9 @@ public abstract class Operator {
     // operators.put( "+", new AdditionOperator() );
     // operators.put( "-", new SubtractionOperator() );
 
-    HashMap<String, Integer> operators = new HashMap<>();
+    private static HashMap<String, Operator> operators = new HashMap<>();
 
+    static
     {
         operators.put( "+", new AddOperator() );
         operators.put( "-", new SubtractOperator() );
@@ -48,8 +49,9 @@ public abstract class Operator {
      * @param token key of the operator we want to retrieve
      * @return reference to a Operator instance.
      */
-    public static Operator getOperator(String token) {
-        return null;
+    public static Operator getOperator(String token)
+    {
+        return operators.get(token);
     }
 
     
@@ -59,7 +61,8 @@ public abstract class Operator {
      * for example token.equals("+") and so on.
      * Think about what happens if we add more operators.
      */
-    public static boolean check(String token) {
-        return false;
+    public static boolean check(String token)
+    {
+        return operators.containsKey(token);
     }
 }

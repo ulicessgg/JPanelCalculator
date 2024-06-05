@@ -9,21 +9,24 @@ public class Operand {
     /**
      * construct operand from string token.
      */
-    public Operand(String token) {
+    public Operand(String token)
+    {
         this.value = Integer.parseInt(token);
     }
 
     /**
      * construct operand from integer
      */
-    public Operand(int value) {
+    public Operand(int value)
+    {
         this.value = value;
     }
 
     /**
      * return value of operand
      */
-    public int getValue() {
+    public int getValue()
+    {
         return value;
     }
 
@@ -31,7 +34,16 @@ public class Operand {
      * Check to see if given token is a valid
      * operand.
      */
-    public static boolean check(String token) {
-        return false;
+    public static boolean check(String token)
+    {
+        try
+        {
+            Integer.parseInt(token);
+            return true;
+        }
+        catch (NumberFormatException e)
+        {
+            return false;
+        }
     }
 }
