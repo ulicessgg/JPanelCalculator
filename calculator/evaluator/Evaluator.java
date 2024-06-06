@@ -19,29 +19,34 @@ public class Evaluator {
   public int evaluateExpression(String expression ) throws InvalidTokenException {
     String expressionToken;
     StringTokenizer expressionTokenizer;
-    String delimiters = " +/*-^";
+    String delimiters = " +/*-^()";
 
     // 3 arguments tells the tokenizer to return delimiters as tokens
     expressionTokenizer = new StringTokenizer( expression, delimiters, true );
 
     while ( expressionTokenizer.hasMoreTokens() ) {
       // filter out spaces
-      if ( !( expressionToken = expressionTokenizer.nextToken() ).equals( " " )) {
+      if ( !( expressionToken = expressionTokenizer.nextToken() ).equals( " " ))
+      {
         // check if token is an operand
-        if ( Operand.check( expressionToken )) {
+        if ( Operand.check( expressionToken ))
+        {
           operandStack.push( new Operand( expressionToken ));
-        } else {
-          if ( ! Operator.check( expressionToken )) {
+        }
+        else
+        {
+          if ( ! Operator.check( expressionToken ))
+          {
             throw new InvalidTokenException(expressionToken);
           }
-
 
           // TODO fix this line of code.
           Operator newOperator = Operator.getOperator(expressionToken);
           // I fixed it now it should return the right operator based off the token. hopefully
 
 
-            while (!operatorStack.isEmpty() && operatorStack.peek().priority() >= newOperator.priority() ) {
+            while (!operatorStack.isEmpty() && operatorStack.peek().priority() >= newOperator.priority() )
+            {
               Operator operatorFromStack = operatorStack.pop();
               Operand operandTwo = operandStack.pop();
               Operand operandOne = operandStack.pop();
