@@ -38,7 +38,7 @@ public class Evaluator {
 
           // TODO fix this line of code.
           Operator newOperator = Operator.getOperator(expressionToken);
-          // I fixed it
+          // I fixed it now it should return the right operator based off the token. hopefully
 
          
             while (operatorStack.peek().priority() >= newOperator.priority() ) {
