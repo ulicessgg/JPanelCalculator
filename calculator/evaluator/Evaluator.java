@@ -40,8 +40,8 @@ public class Evaluator {
           Operator newOperator = Operator.getOperator(expressionToken);
           // I fixed it now it should return the right operator based off the token. hopefully
 
-         
-            while (operatorStack.peek().priority() >= newOperator.priority() ) {
+
+            while (!operatorStack.isEmpty() && operatorStack.peek().priority() >= newOperator.priority() ) {
               Operator operatorFromStack = operatorStack.pop();
               Operand operandTwo = operandStack.pop();
               Operand operandOne = operandStack.pop();
@@ -55,12 +55,25 @@ public class Evaluator {
       }
     }
 
+    while(!operatorStack.isEmpty())
+    {
+      Operator operatorFromStack = operatorStack.pop();
+      Operand operandTwo = operandStack.pop();
+      Operand operandOne = operandStack.pop();
+      Operand result = operatorFromStack.execute( operandOne, operandTwo );
+      operandStack.push( result );
+    }
+
+    if(operandStack.isEmpty())
+    {
+      throw new InvalidTokenException("Error");
+    }
 
     /*
      * once no more tokens need to be scanned from StringTokenizer,
      * we need to evaluate the remaining sub-expressions.
      */
-    return 0;
+    return operandStack.pop().getValue();
   }
 
   public static void main(String[] args) throws InvalidTokenException {

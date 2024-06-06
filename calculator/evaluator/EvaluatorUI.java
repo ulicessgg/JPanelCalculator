@@ -67,7 +67,37 @@ public class EvaluatorUI extends JFrame implements ActionListener {
       */
      public void actionPerformed(ActionEvent actionEventObject)
      {
+         String cmnd = actionEventObject.getActionCommand();
 
+         switch(cmnd)
+         {
+             case "=":
+                 try
+                 {
+                     Evaluator eval = new Evaluator();
+                     int result = eval.evaluateExpression(expressionTextField.getText());
+                     expressionTextField.setText(String.valueOf(result));
+                 }
+                 catch(InvalidTokenException e)
+                 {
+                     expressionTextField.setText("Error");
+                 }
+                 break;
+             case "C":
+                 expressionTextField.setText("");
+                 break;
+             case "CE":
+                 String text = expressionTextField.getText();
 
+                 if(!text.isEmpty())
+                 {
+                     text = text.substring(0, text.length() - 1);
+                     expressionTextField.setText(text);
+                 }
+                 break;
+             default:
+                 expressionTextField.setText(expressionTextField.getText() + cmnd);
+                 break;
+         }
      }
  }
