@@ -33,6 +33,22 @@ public class Evaluator {
         {
           operandStack.push( new Operand( expressionToken ));
         }
+        else if(expressionToken.equals("("))
+        {
+          operatorStack.push(new OpenPOperator());
+        }
+        else if(expressionToken.equals(")"))
+        {
+          while (!operatorStack.isEmpty() && !(operatorStack.peek() instanceof OpenPOperator ))
+          {
+            Operator operatorFromStack = operatorStack.pop();
+            Operand operandTwo = operandStack.pop();
+            Operand operandOne = operandStack.pop();
+            Operand result = operatorFromStack.execute( operandOne, operandTwo );
+            operandStack.push( result );
+          }
+          operatorStack.pop();
+        }
         else
         {
           if ( ! Operator.check( expressionToken ))
