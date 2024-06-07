@@ -18,8 +18,8 @@
     - Implement DivideOperator class `done`
     - Implement MultiplyOperator class `done`
     - Implement PowerOperator class `done`
-- Implement the Evaluator Class
-- Implement the EvluatorUI Class
+- Implement the Evaluator Class `done`
+- Implement the EvluatorUI Class `done`
 - Write Project One documentation
     - Follow the guidelines in the Documentation Guidelines.docx file
     - Write your documentation in the A1DocBase.docx file.
