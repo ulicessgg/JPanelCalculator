@@ -33,6 +33,7 @@ public class Evaluator {
         {
           operandStack.push( new Operand( expressionToken ));
         }
+        // checks for parentheses
         else if(expressionToken.equals("("))
         {
           operatorStack.push(new OpenPOperator());
@@ -75,7 +76,7 @@ public class Evaluator {
         }
       }
     }
-
+    // takes into account remaining sub-expressions
     while(!operatorStack.isEmpty())
     {
       Operator operatorFromStack = operatorStack.pop();

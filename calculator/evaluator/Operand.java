@@ -11,7 +11,7 @@ public class Operand {
      */
     public Operand(String token)
     {
-        this.value = Integer.parseInt(token);
+        value = Integer.parseInt(token);
     }
 
     /**
