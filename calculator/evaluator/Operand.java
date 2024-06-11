@@ -41,7 +41,7 @@ public class Operand {
             Integer.parseInt(token);
             return true;
         }
-        catch (NumberFormatException e)
+        catch (NumberFormatException err)
         {
             return false;
         }

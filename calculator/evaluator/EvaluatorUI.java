@@ -78,7 +78,7 @@ public class EvaluatorUI extends JFrame implements ActionListener {
                      int result = eval.evaluateExpression(expressionTextField.getText());
                      expressionTextField.setText(String.valueOf(result));
                  }
-                 catch(InvalidTokenException e)
+                 catch(InvalidTokenException err)
                  {
                      expressionTextField.setText("Error");
                  }
