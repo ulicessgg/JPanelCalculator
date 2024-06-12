@@ -87,12 +87,23 @@ public class EvaluatorUI extends JFrame implements ActionListener {
                  expressionTextField.setText("");
                  break;
              case "CE":
+                 String delimiters = " +/*-^()";
                  String text = expressionTextField.getText();
 
                  if(!text.isEmpty())
                  {
-                     text = text.substring(0, text.length() - 1);
-                     expressionTextField.setText(text);
+                     int i = text.length() - 1;
+
+                     while(i >= 0 && !delimiters.contains(String.valueOf(text.charAt(i))))
+                     {
+                         i--;
+                     }
+                     while(i >= 0 && text.charAt(i) == ' ')
+                     {
+                         i--;
+                     }
+
+                     expressionTextField.setText(text.substring(0, i + 1).trim());
                  }
                  break;
              default:
